@@ -15,19 +15,40 @@ exports.createTodo = async (req, res) => {
 exports.getAllTodos = async (req, res) => {
   try {
     const getAllTodos = await Todo.find({});
-    res.render('/Index', {
-      todo: getAllTodos,
-    });
+    res.json(getAllTodos);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
 };
 
-// Delete todo
+// Delete Todo
 exports.deleteTodo = async (req, res) => {
   try {
-    await req.todo.findOneAndDelete({ _id: req.params.id });
+    await Todo.findOneAndDelete({ _id: req.params.id });
     res.json({ message: 'Item Deleted' });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+//Update Todo
+exports.updateTodo = async (req, res) => {
+  try {
+    const todo = await Todo.findOne({ _id: req.params.id });
+    const updates = Object.keys(req.body);
+    updates.forEach((update) => (todo[update] = req.body[update]));
+    await todo.save();
+    res.status(200).json({ todo, message: `user info is updated` });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+// Get Specific Todo
+exports.getSpecificTodo = async (req, res) => {
+  try {
+    const getSpecificTodo = await Todo.find({ _id: req.params.id });
+    res.json(getSpecificTodo);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
