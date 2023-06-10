@@ -38,7 +38,7 @@ exports.updateTodo = async (req, res) => {
     const updates = Object.keys(req.body);
     updates.forEach((update) => (todo[update] = req.body[update]));
     await todo.save();
-    res.status(200).json({ todo, message: `user info is updated` });
+    res.status(200).json({ todo, message: `todo info is updated` });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
