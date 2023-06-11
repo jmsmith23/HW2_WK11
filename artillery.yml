@@ -5,9 +5,9 @@ config:
       arrivalRate: 20
 scenarios:
   - flow:
-  - get:
-      url: '/todos'
-      # json:
-      #   title: 'Test'
-      #   description: 'test description'
-      #   completed: true
+      - post:
+          url: '/todos'
+          # json:
+          #   title: 'Test'
+          #   description: 'artillery test'
+          #   completed: true

@@ -47,8 +47,8 @@ exports.updateTodo = async (req, res) => {
 // Get Specific Todo
 exports.getSpecificTodo = async (req, res) => {
   try {
-    const getSpecificTodo = await Todo.find({ _id: req.params.id });
-    res.json(getSpecificTodo);
+    const specificTodo = await Todo.findOne({ _id: req.params.id });
+    res.json(specificTodo);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

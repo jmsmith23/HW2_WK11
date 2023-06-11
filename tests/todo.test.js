@@ -25,6 +25,8 @@ describe('Test the todo endpoints', () => {
       completed: true,
     });
 
+    // TODO: Use find/findOne to check if the new item is actually in the database
+
     expect(response.statusCode).toBe(200);
     expect(response.body.title).toEqual('Take out trash');
     expect(response.body.description).toEqual('Check all garbage');
@@ -60,5 +62,42 @@ describe('Test the todo endpoints', () => {
 
     expect(response.statusCode).toBe(200);
     expect(response.body.message).toBe(`todo info is updated`);
+  });
+
+  test('should get a specific todo', async () => {
+    const getTodo = new Todo({
+      title: 'Random todo',
+      description: 'Come and get me',
+      completed: true,
+    });
+    await getTodo.save();
+    const response = await request(app).get(`/todos/${getTodo.id}`);
+
+    expect(response.body.title).toEqual('Random todo');
+    expect(response.body.description).toEqual('Come and get me');
+    expect(response.body.completed).toEqual(true);
+    expect(response.body).toHaveProperty('createdAt');
+  });
+
+  test('should get a list of all todos', async () => {
+    const toDos = new Todo({
+      title: 'Get all todos',
+      description: 'Get them all',
+      completed: true,
+    });
+    await toDos.save();
+    const response = await request(app).get('/todos');
+
+    console.log('response:', response.body);
+    console.log('is it an array: ', Array.isArray(response.body));
+
+    expect(Array.isArray(response.body)).toEqual(true);
+
+    response.body.forEach((object) => {
+      expect(object).toHaveProperty('title');
+      expect(object).toHaveProperty('description');
+      expect(object).toHaveProperty('completed');
+      expect(object).toHaveProperty('createdAt');
+    });
   });
 });
