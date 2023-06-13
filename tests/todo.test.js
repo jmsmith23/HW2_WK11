@@ -25,8 +25,6 @@ describe('Test the todo endpoints', () => {
       completed: true,
     });
 
-    // TODO: Use find/findOne to check if the new item is actually in the database
-
     expect(response.statusCode).toBe(200);
     expect(response.body.title).toEqual('Take out trash');
     expect(response.body.description).toEqual('Check all garbage');

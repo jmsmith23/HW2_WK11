@@ -7,7 +7,9 @@ scenarios:
   - flow:
       - post:
           url: '/todos'
-          # json:
-          #   title: 'Test'
-          #   description: 'artillery test'
-          #   completed: true
+          json:
+            title: 'Test'
+            description: 'artillery test'
+            completed: true
+      - get:
+          url: '/todos'
