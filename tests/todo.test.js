@@ -56,7 +56,6 @@ describe('Test the todo endpoints', () => {
       description: 'You are actually the biggest slob',
       completed: true,
     });
-    const foundTodo = await Todo.findOne({ _id: todo._id });
 
     expect(response.statusCode).toBe(200);
     expect(response.body.message).toBe(`todo info is updated`);
