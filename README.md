@@ -15,3 +15,30 @@ There are two ways that have been implemented to test this api. The first test i
 ## Load Testing Results
 
 My artillery test results came back passing. I was testing at 20 hits per second for 60 seconds, testing both get and post results simultaneously and received 2400 (200) codes as a result. This indicates to me that all tests passed and the application is capable of handling an acceptable amount of traffic without any kind of problems arising.
+
+## Routes
+
+| **HTTP Method** | **End Point** |           **Action** |
+| :-------------- | :-----------: | -------------------: |
+| POST            |    /todos     |       creates a todo |
+| GET             |    /todos     |       list all todos |
+| GET             |  /todos/:id   | list a specific todo |
+| PUT             |  /todos/:id   |        update a todo |
+| DELETE          |  /todos/:id   |   delete a todo item |
+
+## Todo List In Postman
+
+Create a todo:
+[Imgur](https://i.imgur.com/1ajLs4U.png)/
+
+List All Todos:
+[Imgur](https://i.imgur.com/WLqKUG4.png)/
+
+List Specific Todo:
+[Imgur](https://i.imgur.com/TcyssBv.png)/
+
+Update Todo:
+[Imgur](https://i.imgur.com/r8e9EXU.png)/
+
+Delete Todo:
+[Imgur](https://i.imgur.com/fmSwIqf.png)
