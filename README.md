@@ -29,16 +29,16 @@ My artillery test results came back passing. I was testing at 20 hits per second
 ## Todo List In Postman
 
 Create a todo:
-[Imgur](https://i.imgur.com/1ajLs4U.png)/
+![Imgur](https://i.imgur.com/1ajLs4U.png)/
 
 List All Todos:
-[Imgur](https://i.imgur.com/WLqKUG4.png)/
+![Imgur](https://i.imgur.com/WLqKUG4.png)/
 
 List Specific Todo:
-[Imgur](https://i.imgur.com/TcyssBv.png)/
+![Imgur](https://i.imgur.com/TcyssBv.png)/
 
 Update Todo:
-[Imgur](https://i.imgur.com/r8e9EXU.png)/
+![Imgur](https://i.imgur.com/r8e9EXU.png)/
 
 Delete Todo:
-[Imgur](https://i.imgur.com/fmSwIqf.png)
+![Imgur](https://i.imgur.com/fmSwIqf.png)
