@@ -38,7 +38,7 @@ My artillery test results came back passing. I was testing at 20 hits per second
 ![Imgur](https://i.imgur.com/TcyssBv.png)
 
 **Update Todo:**
-![Imgur](https://i.imgur.com/r8e9EXU.png
+![Imgur](https://i.imgur.com/r8e9EXU.png)
 
 **Delete Todo:**
 ![Imgur](https://i.imgur.com/fmSwIqf.png)
